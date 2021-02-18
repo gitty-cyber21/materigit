@@ -8,20 +8,27 @@
 		<h2>c14180218</h2>
 
 		<input type="date" data-date-format="DD MMMM YYYY" id="picked" name="picked">
-		<button type="button" onclick= "count()">Count</button>
-		<h1 id="tgl"></h1>
-		<br>
+<input type="date" data-date-format="DD MMMM YYYY" id="picked2" name="picked2">
+    <button type="button" onclick= "count()">Count</button>
+    <h1 id="tgl"></h1>
+    <h1 id="tgl2"></h1>
+    <br>
 
-		<script>
-			function count() {
-				var current = new Date();
-				var next = new Date (document.getElementById("picked").value);
-				var hasil = Math.floor((next - current) / (1000 * 60 * 60 * 24));
-	
-				document.getElementById("tgl").innerHTML = "Selisih "+ hasil + " hari dari sekarang";
-				
-			}
-		</script>
+
+    <script>
+        function count() {
+        	var current = new Date();
+            var next = new Date (document.getElementById("picked").value);
+            var hasil = Math.floor((next - current) / (1000 * 60 * 60 * 24));
+            
+            var next2 = new Date (document.getElementById("picked2").value);
+            var hasil2 = Math.floor((next - next2) / (1000 * 60 * 60 * 24));
+
+
+            document.getElementById("tgl").innerHTML = "Selisih "+ hasil + " hari dari sekarang";
+            document.getElementById("tgl2").innerHTML = "Selisih "+ hasil2 + " hari dari yang telah dipilih";
+        }
+    </script>
 
 </body>
 </html>
